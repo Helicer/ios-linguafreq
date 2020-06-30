@@ -9,9 +9,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isCool: Bool = true
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            VStack {
+                Text("Hello, Bob!")
+                    .font(.title)
+                    .foregroundColor(.blue)
+                    .background(Color.black)
+                    .padding()
+                Text("Hello, Bob!")
+                    .font(.title)
+                    .foregroundColor(.blue)
+                    .background(Color.black)
+                    .padding()
+                Toggle(isOn: $isCool) {
+                    Text("Cool Toggle")
+                    
+                }
+                Text("Are we cool? \(isCool ? "Yes" : "No")")
+                
+            }.navigationBarTitle(Text("Better Title"), displayMode: .inline)
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
