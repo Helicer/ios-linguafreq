@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isCool: Bool = true
+    @State var isAlertPresented: Bool = false
     
     var body: some View {
         NavigationView {
@@ -32,8 +33,21 @@ struct ContentView: View {
                     
                 }
                 Text("Are we cool? \(isCool ? "Yes" : "No")")
+                Text("Is alert presented: \(isAlertPresented ? "Yes" : "No")")
+                Button(action: {
+                    self.isAlertPresented = true
+                    funPrint("My debug info")
+                    
+                }) {
+                    Text("Click to show alert")
+                    
+                }
                 
-            }.navigationBarTitle(Text("Better Title"), displayMode: .inline)
+            }
+            .navigationBarTitle(Text("Better Title"), displayMode: .inline)
+            
+        }.alert(isPresented: $isAlertPresented) {
+            Alert(title: Text("Alert me"))
         }
     }
     
@@ -43,4 +57,10 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+func funPrint(_ string: String, filePath: String = #file) {
+    #if DEBUG
+    print("\(filePath): \(string)")
+    #endif
 }
