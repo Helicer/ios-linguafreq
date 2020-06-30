@@ -14,6 +14,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                NavigationLink(destination: DetailView(name: "Some detail", bigTitle: isCool)) {
+                    Text("Go to Detail view")
+                }
                 Text("Hello, Bob!")
                     .font(.title)
                     .foregroundColor(.blue)
