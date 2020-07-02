@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct PhraseIndexView: View {
-    let items = (1..<100).map { "\($0) item" }
     
+    
+
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(items, id: \.self) { item in
-                    Text(item)
+                ForEach(lessons, id: \.id) { lesson in
+                    Text(lesson.foreignPhrase)
                 }
             }
             .frame(width: 200)
