@@ -10,6 +10,7 @@
 		134FDAA424AE14BA000D0F4B /* LessonIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */; };
 		134FDAA624AE21E1000D0F4B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA524AE21E1000D0F4B /* Lesson.swift */; };
 		134FDAA824AE354A000D0F4B /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA724AE354A000D0F4B /* LessonView.swift */; };
+		134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */; };
 		13D3A32624AB719D00539895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32524AB719D00539895 /* AppDelegate.swift */; };
 		13D3A32824AB719D00539895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32724AB719D00539895 /* SceneDelegate.swift */; };
 		13D3A32A24AB719D00539895 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32924AB719D00539895 /* ContentView.swift */; };
@@ -23,7 +24,8 @@
 		134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonIndexView.swift; sourceTree = "<group>"; };
 		134FDAA524AE21E1000D0F4B /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		134FDAA724AE354A000D0F4B /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
-		13D3A32224AB719D00539895 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		13D3A32224AB719D00539895 /* LinguaFreq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinguaFreq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D3A32524AB719D00539895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D3A32724AB719D00539895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		13D3A32924AB719D00539895 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +50,8 @@
 		13D3A31924AB719D00539895 = {
 			isa = PBXGroup;
 			children = (
-				13D3A32424AB719D00539895 /* HelloWorld */,
+				134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */,
+				13D3A32424AB719D00539895 /* LinguaFreq */,
 				13D3A32324AB719D00539895 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +59,12 @@
 		13D3A32324AB719D00539895 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13D3A32224AB719D00539895 /* HelloWorld.app */,
+				13D3A32224AB719D00539895 /* LinguaFreq.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13D3A32424AB719D00539895 /* HelloWorld */ = {
+		13D3A32424AB719D00539895 /* LinguaFreq */ = {
 			isa = PBXGroup;
 			children = (
 				13D3A32524AB719D00539895 /* AppDelegate.swift */,
@@ -76,7 +79,7 @@
 				13D3A33324AB719F00539895 /* Info.plist */,
 				13D3A32D24AB719F00539895 /* Preview Content */,
 			);
-			path = HelloWorld;
+			path = LinguaFreq;
 			sourceTree = "<group>";
 		};
 		13D3A32D24AB719F00539895 /* Preview Content */ = {
@@ -90,9 +93,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13D3A32124AB719D00539895 /* HelloWorld */ = {
+		13D3A32124AB719D00539895 /* LinguaFreq */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13D3A33624AB719F00539895 /* Build configuration list for PBXNativeTarget "HelloWorld" */;
+			buildConfigurationList = 13D3A33624AB719F00539895 /* Build configuration list for PBXNativeTarget "LinguaFreq" */;
 			buildPhases = (
 				13D3A31E24AB719D00539895 /* Sources */,
 				13D3A31F24AB719D00539895 /* Frameworks */,
@@ -102,9 +105,9 @@
 			);
 			dependencies = (
 			);
-			name = HelloWorld;
+			name = LinguaFreq;
 			productName = HelloWorld;
-			productReference = 13D3A32224AB719D00539895 /* HelloWorld.app */;
+			productReference = 13D3A32224AB719D00539895 /* LinguaFreq.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 13D3A31D24AB719D00539895 /* Build configuration list for PBXProject "HelloWorld" */;
+			buildConfigurationList = 13D3A31D24AB719D00539895 /* Build configuration list for PBXProject "LinguaFreq" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -135,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13D3A32124AB719D00539895 /* HelloWorld */,
+				13D3A32124AB719D00539895 /* LinguaFreq */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D3A33224AB719F00539895 /* LaunchScreen.storyboard in Resources */,
+				134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */,
 				13D3A32F24AB719F00539895 /* Preview Assets.xcassets in Resources */,
 				13D3A32C24AB719F00539895 /* Assets.xcassets in Resources */,
 			);
@@ -301,14 +305,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HelloWorld/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LinguaFreq/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HelloWorld/Info.plist;
+				INFOPLIST_FILE = LinguaFreq/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jro.HelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jro.LinguaFreq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,14 +324,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HelloWorld/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LinguaFreq/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HelloWorld/Info.plist;
+				INFOPLIST_FILE = LinguaFreq/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jro.HelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jro.LinguaFreq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -337,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13D3A31D24AB719D00539895 /* Build configuration list for PBXProject "HelloWorld" */ = {
+		13D3A31D24AB719D00539895 /* Build configuration list for PBXProject "LinguaFreq" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13D3A33424AB719F00539895 /* Debug */,
@@ -346,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13D3A33624AB719F00539895 /* Build configuration list for PBXNativeTarget "HelloWorld" */ = {
+		13D3A33624AB719F00539895 /* Build configuration list for PBXNativeTarget "LinguaFreq" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13D3A33724AB719F00539895 /* Debug */,
