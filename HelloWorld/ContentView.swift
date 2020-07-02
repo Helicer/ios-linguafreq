@@ -15,24 +15,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: DetailView(name: "Some detail", bigTitle: isCool)) {
+                NavigationLink(destination: DetailView(name: "Some detail (passed in from Home view)", bigTitle: isCool)) {
                     Text("Go to Detail view")
                 }
-                Text("Hello, Bob!")
+                Text("Formatted text")
                     .font(.title)
                     .foregroundColor(.blue)
                     .background(Color.black)
                     .padding()
-                Text("Hello, Bob!")
-                    .font(.title)
-                    .foregroundColor(.blue)
-                    .background(Color.black)
-                    .padding()
+                Divider()
                 Toggle(isOn: $isCool) {
                     Text("Cool Toggle")
                     
                 }
                 Text("Are we cool? \(isCool ? "Yes" : "No")")
+                Divider()
                 Text("Is alert presented: \(isAlertPresented ? "Yes" : "No")")
                 Button(action: {
                     self.isAlertPresented = true
@@ -44,10 +41,10 @@ struct ContentView: View {
                 }
                 
             }
-            .navigationBarTitle(Text("Better Title"), displayMode: .inline)
+            .navigationBarTitle(Text("Home view"), displayMode: .inline)
             
         }.alert(isPresented: $isAlertPresented) {
-            Alert(title: Text("Alert me"))
+            Alert(title: Text("This is an alert."))
         }
     }
     

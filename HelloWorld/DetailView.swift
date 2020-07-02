@@ -15,9 +15,9 @@ struct DetailView: View {
     var body: some View {
         Group {
             if bigTitle {
-                Text(name).navigationBarTitle(Text("BIG TITLE"), displayMode: .large)
+                Text(name).navigationBarTitle(Text("Big Title (Cool = True)"), displayMode: .large)
             } else {
-                Text(name).navigationBarTitle(Text("INLINE TITLE"), displayMode: .inline)
+                Text(name).navigationBarTitle(Text("Inline Title (Cool = False)"), displayMode: .inline)
             }
         }
     }
@@ -25,6 +25,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(name: "My details", bigTitle: true)
+        // Only shown when in XCode Preview
+        DetailView(name: "Detail view info (set for preview)", bigTitle: true)
     }
 }
