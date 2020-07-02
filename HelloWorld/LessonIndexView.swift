@@ -3,16 +3,24 @@ import SwiftUI
 struct LessonIndexView: View {
     
     var body: some View {
-        List {
-            ForEach(lessons, id: \.id) { lesson in
-                HStack {
-                    Text(lesson.foreignPhrase)
-                    Spacer()
-                    Text(lesson.nativePhrase).foregroundColor(.gray)
+        NavigationView {
+            List {
+                ForEach(lessons, id: \.id) { lesson in
+                    NavigationLink(destination: LessonView(lesson: lesson)) {
+                        HStack {
+                            
+                            Text(lesson.foreignPhrase)
+                            Spacer()
+                            Text(lesson.nativePhrase).foregroundColor(.gray)
+                            
+                        }
+                    }
+                    
+                    
                 }
-                
-            }
+            }.navigationBarTitle(Text("Lessons"))
         }
+        
     }
 }
 
