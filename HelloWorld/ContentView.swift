@@ -26,7 +26,6 @@ struct ContentView: View {
                 Divider()
                 Toggle(isOn: $isCool) {
                     Text("Cool Toggle")
-                    
                 }
                 Text("Are we cool? \(isCool ? "Yes" : "No")")
                 Divider()
