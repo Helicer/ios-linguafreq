@@ -10,17 +10,11 @@ import SwiftUI
 
 struct PhraseIndexView: View {
     
-    
-
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(lessons, id: \.id) { lesson in
-                    Text(lesson.foreignPhrase)
-                }
+        List {
+            ForEach(lessons, id: \.id) { lesson in
+                Text(lesson.foreignPhrase)
             }
-            .frame(width: 200)
-            .background(Color.blue)
         }
     }
 }
