@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		134FDAA424AE14BA000D0F4B /* PhraseIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA324AE14BA000D0F4B /* PhraseIndexView.swift */; };
+		134FDAA424AE14BA000D0F4B /* LessonIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */; };
 		134FDAA624AE21E1000D0F4B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA524AE21E1000D0F4B /* Lesson.swift */; };
 		13D3A32624AB719D00539895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32524AB719D00539895 /* AppDelegate.swift */; };
 		13D3A32824AB719D00539895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32724AB719D00539895 /* SceneDelegate.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		134FDAA324AE14BA000D0F4B /* PhraseIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseIndexView.swift; sourceTree = "<group>"; };
+		134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonIndexView.swift; sourceTree = "<group>"; };
 		134FDAA524AE21E1000D0F4B /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		13D3A32224AB719D00539895 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D3A32524AB719D00539895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				13D3A32524AB719D00539895 /* AppDelegate.swift */,
 				13D3A32724AB719D00539895 /* SceneDelegate.swift */,
 				13D3A32924AB719D00539895 /* ContentView.swift */,
-				134FDAA324AE14BA000D0F4B /* PhraseIndexView.swift */,
+				134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */,
 				134FDAA524AE21E1000D0F4B /* Lesson.swift */,
 				13D3A33924AB854700539895 /* DetailView.swift */,
 				13D3A32B24AB719F00539895 /* Assets.xcassets */,
@@ -157,7 +157,7 @@
 			files = (
 				134FDAA624AE21E1000D0F4B /* Lesson.swift in Sources */,
 				13D3A32624AB719D00539895 /* AppDelegate.swift in Sources */,
-				134FDAA424AE14BA000D0F4B /* PhraseIndexView.swift in Sources */,
+				134FDAA424AE14BA000D0F4B /* LessonIndexView.swift in Sources */,
 				13D3A33A24AB854700539895 /* DetailView.swift in Sources */,
 				13D3A32824AB719D00539895 /* SceneDelegate.swift in Sources */,
 				13D3A32A24AB719D00539895 /* ContentView.swift in Sources */,
