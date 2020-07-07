@@ -6,6 +6,10 @@ struct LessonView: View {
     var body: some View {
         VStack {
             Text(lesson.phrase.foreign).font(.title)
+            if lesson.phrase.pronunciation != nil {
+                Text(lesson.phrase.pronunciation!).font(.title)
+            }
+        
             Text(lesson.phrase.native).font(.title)
             Text(lesson.sentence.foreign)
             Text(lesson.sentence.native)
@@ -19,3 +23,4 @@ struct LessonView_Previews: PreviewProvider {
         LessonView(lesson: lessons[1])
     }
 }
+

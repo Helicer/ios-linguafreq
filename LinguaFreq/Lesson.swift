@@ -76,7 +76,19 @@ let lessons = [
             foreign: "我爱深圳。",
             pronunciation: "Wǒ ài Shēnzhèn.",
             native: "I love Shenzhen.")
-    )
+    ),
+    
+        Lesson(
+            frequencyRank: 59,
+            phrase: Lesson.TranslationSet(
+                foreign: "cómo",
+                pronunciation: nil,
+                native: "how"),
+            sentence: Lesson.TranslationSet(
+                foreign: "¿Cómo está todo?",
+                pronunciation: nil,
+                native: "How is everything?")
+        ),
     
     
 ]
