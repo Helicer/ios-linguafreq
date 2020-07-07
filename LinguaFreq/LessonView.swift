@@ -2,6 +2,7 @@ import SwiftUI
 
 struct LessonView: View {
     var lesson: Lesson
+    let audioplayer = AudioPlayer()
     
     var body: some View {
         VStack {
@@ -13,7 +14,14 @@ struct LessonView: View {
             Text(lesson.phrase.native).font(.title)
             Text(lesson.sentence.foreign)
             Text(lesson.sentence.native)
+            Button(action: {
+                self.audioplayer.play()
+            }) {
+                Text("Play audio")
+            }
+            
             Spacer()
+            
         }
     }
 }

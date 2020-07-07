@@ -11,6 +11,8 @@
 		134FDAA624AE21E1000D0F4B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA524AE21E1000D0F4B /* Lesson.swift */; };
 		134FDAA824AE354A000D0F4B /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA724AE354A000D0F4B /* LessonView.swift */; };
 		134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */; };
+		13BA871124B4CA350047BBFB /* lesson-59.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13BA871024B4CA340047BBFB /* lesson-59.mp3 */; };
+		13BA871324B4CA5A0047BBFB /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA871224B4CA5A0047BBFB /* AudioPlayer.swift */; };
 		13D3A32624AB719D00539895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32524AB719D00539895 /* AppDelegate.swift */; };
 		13D3A32824AB719D00539895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3A32724AB719D00539895 /* SceneDelegate.swift */; };
 		13D3A32C24AB719F00539895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D3A32B24AB719F00539895 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		134FDAA524AE21E1000D0F4B /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		134FDAA724AE354A000D0F4B /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		13BA871024B4CA340047BBFB /* lesson-59.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lesson-59.mp3"; sourceTree = "<group>"; };
+		13BA871224B4CA5A0047BBFB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		13D3A32224AB719D00539895 /* LinguaFreq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinguaFreq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D3A32524AB719D00539895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D3A32724AB719D00539895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13BA870D24B4C7DF0047BBFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13BA871024B4CA340047BBFB /* lesson-59.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		13D3A31924AB719D00539895 = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +75,9 @@
 		13D3A32424AB719D00539895 /* LinguaFreq */ = {
 			isa = PBXGroup;
 			children = (
+				13BA870D24B4C7DF0047BBFB /* Resources */,
 				13D3A32524AB719D00539895 /* AppDelegate.swift */,
+				13BA871224B4CA5A0047BBFB /* AudioPlayer.swift */,
 				13D3A32724AB719D00539895 /* SceneDelegate.swift */,
 				134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */,
 				134FDAA724AE354A000D0F4B /* LessonView.swift */,
@@ -143,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D3A33224AB719F00539895 /* LaunchScreen.storyboard in Resources */,
+				13BA871124B4CA350047BBFB /* lesson-59.mp3 in Resources */,
 				134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */,
 				13D3A32F24AB719F00539895 /* Preview Assets.xcassets in Resources */,
 				13D3A32C24AB719F00539895 /* Assets.xcassets in Resources */,
@@ -161,6 +176,7 @@
 				13D3A32624AB719D00539895 /* AppDelegate.swift in Sources */,
 				134FDAA424AE14BA000D0F4B /* LessonIndexView.swift in Sources */,
 				13D3A32824AB719D00539895 /* SceneDelegate.swift in Sources */,
+				13BA871324B4CA5A0047BBFB /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
