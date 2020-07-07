@@ -5,10 +5,10 @@ struct LessonView: View {
     
     var body: some View {
         VStack {
-            Text(lesson.foreignPhrase).font(.title)
-            Text(lesson.nativePhrase).font(.title)
-            Text(lesson.foreignSentence)
-            Text(lesson.nativeSentence)
+            Text(lesson.phrase.foreign).font(.title)
+            Text(lesson.phrase.native).font(.title)
+            Text(lesson.sentence.foreign)
+            Text(lesson.sentence.native)
             Spacer()
         }
     }

@@ -9,9 +9,9 @@ struct LessonIndexView: View {
                     NavigationLink(destination: LessonView(lesson: lesson)) {
                         HStack {
                             
-                            Text(lesson.foreignPhrase)
+                            Text(lesson.phrase.foreign)
                             Spacer()
-                            Text(lesson.nativePhrase).foregroundColor(.gray)
+                            Text(lesson.phrase.native).foregroundColor(.gray)
                             
                         }
                     }
