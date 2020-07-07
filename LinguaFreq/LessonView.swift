@@ -15,7 +15,7 @@ struct LessonView: View {
             Text(lesson.sentence.foreign)
             Text(lesson.sentence.native)
             Button(action: {
-                self.audioplayer.play()
+                self.audioplayer.play(audioResource: self.lesson.audioResource)
             }) {
                 Text("Play audio")
             }

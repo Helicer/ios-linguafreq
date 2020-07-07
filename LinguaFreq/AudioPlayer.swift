@@ -11,9 +11,10 @@ import AVFoundation
 class AudioPlayer {
     var player: AVAudioPlayer?
     
-    func play() {
+    func play(audioResource: String) {
         
-        let path = Bundle.main.path(forResource: "lesson-59", ofType: "mp3")!
+        let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3")
+        let path = optionalPath!
         let url = URL(fileURLWithPath: path)
         print(url)
         

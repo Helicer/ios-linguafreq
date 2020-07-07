@@ -20,6 +20,10 @@ struct Lesson {
     let frequencyRank: Int
     let phrase: TranslationSet
     let sentence: TranslationSet
+    
+    let audioResource: String
+    
+    
 }
 
 
@@ -75,7 +79,8 @@ let lessons = [
         sentence: Lesson.TranslationSet(
             foreign: "我爱深圳。",
             pronunciation: "Wǒ ài Shēnzhèn.",
-            native: "I love Shenzhen.")
+            native: "I love Shenzhen."),
+        audioResource: "lesson-1"
     ),
     
         Lesson(
@@ -87,7 +92,8 @@ let lessons = [
             sentence: Lesson.TranslationSet(
                 foreign: "¿Cómo está todo?",
                 pronunciation: nil,
-                native: "How is everything?")
+                native: "How is everything?"),
+            audioResource: "lesson-59"
         ),
     
     
