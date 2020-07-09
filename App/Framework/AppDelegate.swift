@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  HelloWorld
-//
-//  Created by Jonathan Rogivue on 2020-06-30.
-//  Copyright © 2020 JRO. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
