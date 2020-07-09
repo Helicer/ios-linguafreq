@@ -13,7 +13,7 @@ class AudioPlayer {
     
     func play(audioResource: String) {
         
-        let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3")
+        let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
         let path = optionalPath!
         let url = URL(fileURLWithPath: path)
         print(url)
