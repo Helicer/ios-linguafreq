@@ -8,12 +8,17 @@
 
 import Foundation
 
-struct LessonRepository {
+protocol LessonRepository {
+    var allLessons: [Lesson] { get } // Implementation must have a getter to conform to protocol
+    
+}
+
+struct HardcodedJSONLessonRepository: LessonRepository {
     
     let allLessons: [Lesson]
     
     init() {
-        self.allLessons = LessonRepository.loadData()
+        self.allLessons = HardcodedJSONLessonRepository.loadData()
     }
     
     private static func loadData() -> [Lesson] {
