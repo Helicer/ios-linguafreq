@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct LessonView: View {
-    @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
-    var lessonID: UUID
+    var lesson: Lesson
 
     let audioplayer = AudioPlayer()
     
@@ -25,14 +24,12 @@ struct LessonView: View {
         }
     }
 
-    // computed property
-    private var lesson: Lesson { lessonRepository.allLessons.first(where: { $0.id == lessonID })! }
 }
 
-//struct LessonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
-//    }
-//}
-//
+struct LessonView_Previews: PreviewProvider {
+    static var previews: some View {
+
+        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
+    }
+}
+

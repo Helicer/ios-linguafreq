@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct LessonIndexView: View {
-    @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
+struct LessonIndexView<Repository>: View where Repository: LessonRepository {
+    @EnvironmentObject var lessonRepository: Repository
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(lessonRepository.allLessons, id: \.id) { lesson in
-                    NavigationLink(destination: LessonView(lessonID: lesson.id).environmentObject(self.lessonRepository)) {
+                    NavigationLink(destination: LessonView(lesson: lesson)) {
                         HStack {
                             Text(lesson.phrase.foreign)
                             Spacer()
@@ -20,9 +20,10 @@ struct LessonIndexView: View {
     }
 }
 
+
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonIndexView()
+        LessonIndexView<HardcodedJSONLessonRepository>()
             .environmentObject(HardcodedJSONLessonRepository())
     }
 }

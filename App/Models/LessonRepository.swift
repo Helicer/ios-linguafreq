@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol LessonRepository {
+protocol LessonRepository: ObservableObject {
     var allLessons: [Lesson] { get } // Implementation must have a getter to conform to protocol
     
 }
 
-class HardcodedJSONLessonRepository: ObservableObject {
+class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
     @Published var allLessons = [Lesson]()
     
     init() {
