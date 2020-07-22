@@ -24,7 +24,7 @@ struct LessonIndexView: View {
     }
     
     
-    private var lessons = LessonRepository().loadData()
+    private var lessons = LessonRepository().allLessons
 }
 
 struct LessonIndexView_Previews: PreviewProvider {

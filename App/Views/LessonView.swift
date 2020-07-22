@@ -30,7 +30,7 @@ struct LessonView: View {
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
 
-        LessonView(lesson: LessonRepository().loadData()[0])
+        LessonView(lesson: LessonRepository().allLessons[0])
     }
 }
 

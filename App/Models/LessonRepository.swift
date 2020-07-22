@@ -10,7 +10,13 @@ import Foundation
 
 struct LessonRepository {
     
-    func loadData() -> [Lesson] {
+    let allLessons: [Lesson]
+    
+    init() {
+        self.allLessons = LessonRepository.loadData()
+    }
+    
+    private static func loadData() -> [Lesson] {
         
         let json =
         """
@@ -44,17 +50,3 @@ struct LessonRepository {
         
     }
 }
-
-
-//Lesson(
-//    frequencyRank: 1,
-//    phrase: Lesson.TranslationSet(
-//        foreign: "爱",
-//        pronunciation: "ài",
-//        native: "to love"),
-//    sentence: Lesson.TranslationSet(
-//        foreign: "我爱深圳。",
-//        pronunciation: "Wǒ ài Shēnzhèn.",
-//        native: "f"),
-//    audioResource: "lesson-1"
-//),
