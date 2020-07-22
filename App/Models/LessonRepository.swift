@@ -13,12 +13,13 @@ protocol LessonRepository {
     
 }
 
-struct HardcodedJSONLessonRepository: LessonRepository {
-    
-    let allLessons: [Lesson]
+class HardcodedJSONLessonRepository: ObservableObject {
+    @Published var allLessons = [Lesson]()
     
     init() {
-        self.allLessons = HardcodedJSONLessonRepository.loadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.allLessons = HardcodedJSONLessonRepository.loadData()
+        }
     }
     
     private static func loadData() -> [Lesson] {

@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct LessonView: View {
-    var lesson: Lesson
+    @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
+    var lessonID: UUID
+
     let audioplayer = AudioPlayer()
     
     var body: some View {
@@ -20,17 +22,17 @@ struct LessonView: View {
                 Text("Play audio")
             }
             Spacer()
-            
         }
-        
-
     }
+
+    // computed property
+    private var lesson: Lesson { lessonRepository.allLessons.first(where: { $0.id == lessonID })! }
 }
 
-struct LessonView_Previews: PreviewProvider {
-    static var previews: some View {
-
-        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
-    }
-}
-
+//struct LessonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
+//    }
+//}
+//
