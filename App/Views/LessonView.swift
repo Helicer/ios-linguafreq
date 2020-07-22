@@ -19,16 +19,18 @@ struct LessonView: View {
             }) {
                 Text("Play audio")
             }
-            
             Spacer()
             
         }
+        
+
     }
 }
 
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonView(lesson: lessons[1])
+
+        LessonView(lesson: LessonRepository().loadData()[0])
     }
 }
 

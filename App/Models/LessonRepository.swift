@@ -10,7 +10,7 @@ import Foundation
 
 struct LessonRepository {
     
-    func loadData() {
+    func loadData() -> [Lesson] {
         
         let json =
         """
@@ -35,12 +35,10 @@ struct LessonRepository {
         if let data = json.data(using: .utf8) {
             let decoder = JSONDecoder()
             let lessons = try! decoder.decode([Lesson].self, from: data)
-            lessons.forEach { lesson in
-                print(lesson.sentence.foreign)
-            }
+            return lessons
                 
         } else {
-            print("Couldn't get data from string")
+            return [] // Return empty lesson array
         }
         
         

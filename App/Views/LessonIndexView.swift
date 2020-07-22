@@ -22,6 +22,9 @@ struct LessonIndexView: View {
         }
         
     }
+    
+    
+    private var lessons = LessonRepository().loadData()
 }
 
 struct LessonIndexView_Previews: PreviewProvider {
