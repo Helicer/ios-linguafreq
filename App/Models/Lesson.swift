@@ -1,7 +1,7 @@
 import Foundation
 
-struct Lesson {
-    struct TranslationSet {
+struct Lesson: Decodable {
+    struct TranslationSet: Decodable {
         let foreign: String
         let pronunciation: String?
         let native: String
