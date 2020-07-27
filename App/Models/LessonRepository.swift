@@ -24,12 +24,10 @@ class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
     
     private static func loadData() -> [Lesson] {
         
-        let filepath = Bundle.main.path(forResource: "mandarin-lessons", ofType: "json")!
-
-        let json = try! String(contentsOfFile: filepath)
+        let file = Bundle.main.url(forResource: "mandarin-lessons", withExtension:  "json")!
 
 
-        if let data = json.data(using: .utf8) {
+        if let data = try? Data(contentsOf: file) {
             let decoder = JSONDecoder()
             let lessons = try! decoder.decode([Lesson].self, from: data)
             return lessons
