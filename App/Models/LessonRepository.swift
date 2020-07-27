@@ -17,9 +17,7 @@ class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
     @Published var allLessons = [Lesson]()
     
     init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.allLessons = HardcodedJSONLessonRepository.loadData()
-        }
     }
     
     private static func loadData() -> [Lesson] {

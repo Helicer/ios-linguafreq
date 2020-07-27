@@ -12,5 +12,19 @@
             "native": "I love Shenzhen."
         },
         "audioResource": "lesson-1"
+    },
+    {
+        "frequencyRank": 2,
+        "phrase": {
+            "foreign": "爱",
+            "pronunciation": "ài",
+            "native": "to love"
+        },
+        "sentence": {
+            "foreign": "我爱深圳。",
+            "pronunciation": "Wǒ ài Shēnzhèn.",
+            "native": "I love Shenzhen."
+        },
+        "audioResource": "lesson-59"
     }
 ]
