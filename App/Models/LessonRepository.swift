@@ -23,19 +23,19 @@ class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
     }
     
     private static func loadData() -> [Lesson] {
-        
+
+        // Crashes if file does not exist
         let file = Bundle.main.url(forResource: "mandarin-lessons", withExtension:  "json")!
 
+        // Reading data from file, forcing it to be Data (if doesn't exist, will cause a hard error)
+        let data = try! Data(contentsOf: file)
+        let decoder = JSONDecoder()
 
-        if let data = try? Data(contentsOf: file) {
-            let decoder = JSONDecoder()
-            let lessons = try! decoder.decode([Lesson].self, from: data)
-            return lessons
+        // Crash if can't decode (e.g. malformed JSON, missing/invalid key, doesn't match struct properly)
+        let lessons = try! decoder.decode([Lesson].self, from: data)
+        return lessons
                 
-        } else {
-            return [] // Return empty lesson array
-        }
-        
+
         
     }
 }
