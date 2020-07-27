@@ -24,25 +24,10 @@ class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
     
     private static func loadData() -> [Lesson] {
         
-        let json =
-        """
-        [
-            {
-                "frequencyRank": 1,
-                "phrase": {
-                    "foreign": "爱",
-                    "pronunciation": "ài",
-                    "native": "to love"
-                },
-                "sentence": {
-                    "foreign": "我爱深圳。",
-                    "pronunciation": "Wǒ ài Shēnzhèn.",
-                    "native": "I love Shenzhen."
-                },
-                "audioResource": "lesson-1"
-            }
-        ]
-        """
+        let filepath = Bundle.main.path(forResource: "mandarin-lessons", ofType: "json")!
+
+        let json = try! String(contentsOfFile: filepath)
+
 
         if let data = json.data(using: .utf8) {
             let decoder = JSONDecoder()
