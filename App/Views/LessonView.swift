@@ -2,48 +2,60 @@ import SwiftUI
 
 struct LessonView: View {
     var lesson: Lesson
-
     let audioplayer = AudioPlayer()
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    // Text("This is our giant string which will take up tons of space.")
-                    Text(lesson.phrase.foreign)
-                        .font(.title)
-
-                    if lesson.phrase.pronunciation != nil {
-                        Text(lesson.phrase.pronunciation!).font(.title)
-                    }
-                    Text(lesson.phrase.native).font(.title)
-                }
+                TranslationSetView(translationSet: lesson.phrase)
                 Spacer().frame(height: 20)
-                Image(systemName: "star.fill")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.yellow)
-                .frame(width: 30)
+                Star()
             }
-            Text(lesson.sentence.foreign)
-            Text(lesson.sentence.native)
-            Button(action: {
-                self.audioplayer.play(audioResource: self.lesson.audioResource)
-            }) {
+
+            TranslationSetView(translationSet: lesson.sentence)
+
+            Button(action: playAudio) {
                 Text("Play audio")
             }
+
             Spacer()
         }
-        //        .frame(maxWidth: .infinity, alignment: .leading)  // Create enough space, and then left-align the contents
-        //                Sp
+    }
+
+    private func playAudio() {
+        self.audioplayer.play(audioResource: self.lesson.audioResource)
+    }
+}
+
+private struct Star: View {
+    var body: some View {
+        Image(systemName: "star.fill")
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.yellow)
+            .frame(width: 30)
+    }
+}
+
+private struct TranslationSetView: View {
+    var translationSet: Lesson.TranslationSet
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(translationSet.foreign)
+                .font(.title)
+
+            if translationSet.pronunciation != nil {
+                Text(translationSet.pronunciation!).font(.title)
+            }
+            Text(translationSet.native).font(.title)
+        }
     }
 }
 
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
-
         LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
             .padding()
     }
 }
-
