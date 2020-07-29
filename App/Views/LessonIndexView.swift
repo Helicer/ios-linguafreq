@@ -46,7 +46,7 @@ struct LessonIndexView: View {
 
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonIndexView()
+        LessonIndexView(selectedLessonFrequencyRank: 2)
             .environmentObject(HardcodedJSONLessonRepository())
     }
 }
