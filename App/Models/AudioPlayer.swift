@@ -8,18 +8,24 @@
 
 import AVFoundation
 
-class AudioPlayer {
-    var player: AVAudioPlayer?
+class AudioPlayer: ObservableObject {
+    @Published var isPlaying = false
+    var lesson: Lesson? 
+
+    private var player: AVAudioPlayer?
     
-    func play(audioResource: String) {
+    func play() {
+        guard let audioResource = lesson?.audioResource
+            else { return }
         
         let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
         let path = optionalPath!
         let url = URL(fileURLWithPath: path)
-        print(url)
         
         player = try! AVAudioPlayer(contentsOf: url)
         player?.play()
+
+        isPlaying = true
         
         
     }

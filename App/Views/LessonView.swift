@@ -23,7 +23,7 @@ struct LessonView: View {
     }
 
     private func playAudio() {
-        self.audioplayer.play(audioResource: self.lesson.audioResource)
+        //self.audioplayer.play(audioResource: self.lesson.audioResource)
     }
 }
 

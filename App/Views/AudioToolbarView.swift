@@ -1,13 +1,38 @@
 import SwiftUI
 
 struct AudioToolbarView: View {
+    @ObservedObject var audioplayer: AudioPlayer
+
+
     var body: some View {
         HStack {
             Spacer()
-            Image(systemName: "play.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30)
+
+            if audioplayer.isPlaying == false {
+                Button(action: {
+                    self.audioplayer.play()
+                }) {
+                    Image(systemName: "play.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
+                }
+            } else {
+                Button(action: {
+                       self.audioplayer.play()
+                   }) {
+                       Image(systemName: "pause.fill")
+                           .resizable()
+                           .scaledToFit()
+                           .frame(width: 30)
+                   }
+
+            }
+
+
+
+
+
             Spacer()
         }
         .padding()
@@ -18,7 +43,7 @@ struct AudioToolbarView: View {
 
 struct AudioToolbarView_Previews: PreviewProvider {
     static var previews: some View {
-        AudioToolbarView()
+        AudioToolbarView(audioplayer: AudioPlayer())
     }
 }
 
