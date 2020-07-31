@@ -7,25 +7,10 @@ struct LessonIndexView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(lessonRepository.allLessons, id: \.id) { lesson in
-                        Button(action: {
-                            self.selectedLessonFrequencyRank = lesson.frequencyRank
-                        }) {
-                            Group {
-                                if lesson.frequencyRank == self.selectedLessonFrequencyRank {
-
-                                    LessonView(lesson: lesson)
-                                } else {
-                                    CollapsedLessonView(lesson: lesson)
-        
-
-                                }
-                            }
-                        }
-                    }
-                }.navigationBarTitle(Text("Lessons"))
-
+                LessonList(
+                    lessons: lessonRepository.allLessons,
+                    selectedLessonFrequencyRank: self.$selectedLessonFrequencyRank
+                )
 
                 if self.selectedLessonFrequencyRank != -1 {
                     AudioToolbarView()
@@ -49,6 +34,35 @@ struct LessonIndexView: View {
 
 
 
+    private struct LessonList: View {
+
+        var lessons: [Lesson]
+        @Binding var selectedLessonFrequencyRank: Int
+
+        var body: some View {
+            List {
+                  ForEach(lessons, id: \.id) { lesson in
+                      Button(action: {
+                          self.selectedLessonFrequencyRank = lesson.frequencyRank
+                      }) {
+                          Group {
+                              if lesson.frequencyRank == self.selectedLessonFrequencyRank {
+
+                                  LessonView(lesson: lesson)
+                              } else {
+                                  CollapsedLessonView(lesson: lesson)
+
+
+                              }
+                          }
+                      }
+                  }
+              }.navigationBarTitle(Text("Lessons"))
+
+        }
+
+
+    }
 
 
 }
