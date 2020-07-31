@@ -6,22 +6,32 @@ struct LessonIndexView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(lessonRepository.allLessons, id: \.id) { lesson in
-                    Button(action: {
-                        self.selectedLessonFrequencyRank = lesson.frequencyRank
-                    }) {
-                        Group {
-                            if lesson.frequencyRank == self.selectedLessonFrequencyRank {
+            VStack {
+                List {
+                    ForEach(lessonRepository.allLessons, id: \.id) { lesson in
+                        Button(action: {
+                            self.selectedLessonFrequencyRank = lesson.frequencyRank
+                        }) {
+                            Group {
+                                if lesson.frequencyRank == self.selectedLessonFrequencyRank {
 
-                                LessonView(lesson: lesson)
-                            } else {
-                                CollapsedLessonView(lesson: lesson)
+                                    LessonView(lesson: lesson)
+                                } else {
+                                    CollapsedLessonView(lesson: lesson)
+        
+
+                                }
                             }
                         }
                     }
+                }.navigationBarTitle(Text("Lessons"))
+
+
+                if self.selectedLessonFrequencyRank != -1 {
+                    AudioToolbarView()
                 }
-            }.navigationBarTitle(Text("Lessons"))
+
+            }
         }
     }
 

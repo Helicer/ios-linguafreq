@@ -12,6 +12,7 @@
 		134FDAA824AE354A000D0F4B /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA724AE354A000D0F4B /* LessonView.swift */; };
 		134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */; };
 		135AAA4A24C8742400884260 /* LessonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AAA4924C8742400884260 /* LessonRepository.swift */; };
+		136BEAF924D4524900107A05 /* AudioToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136BEAF824D4524900107A05 /* AudioToolbarView.swift */; };
 		1397ACE224B7641600139C2A /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 1397ACE124B7641600139C2A /* Audio */; };
 		139C578424CF0B27009E16F6 /* mandarin-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 139C578324CF0B27009E16F6 /* mandarin-lessons.json */; };
 		13BA871324B4CA5A0047BBFB /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA871224B4CA5A0047BBFB /* AudioPlayer.swift */; };
@@ -28,6 +29,7 @@
 		134FDAA724AE354A000D0F4B /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		135AAA4924C8742400884260 /* LessonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRepository.swift; sourceTree = "<group>"; };
+		136BEAF824D4524900107A05 /* AudioToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioToolbarView.swift; sourceTree = "<group>"; };
 		1397ACE124B7641600139C2A /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		139C578324CF0B27009E16F6 /* mandarin-lessons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mandarin-lessons.json"; sourceTree = "<group>"; };
 		13BA871224B4CA5A0047BBFB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */,
+				136BEAF824D4524900107A05 /* AudioToolbarView.swift */,
 				134FDAA724AE354A000D0F4B /* LessonView.swift */,
 			);
 			path = Views;
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				134FDAA824AE354A000D0F4B /* LessonView.swift in Sources */,
+				136BEAF924D4524900107A05 /* AudioToolbarView.swift in Sources */,
 				134FDAA624AE21E1000D0F4B /* Lesson.swift in Sources */,
 				13D3A32624AB719D00539895 /* AppDelegate.swift in Sources */,
 				134FDAA424AE14BA000D0F4B /* LessonIndexView.swift in Sources */,
