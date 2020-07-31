@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-class AudioPlayer: ObservableObject {
+class AudioPlayer: NSObject, ObservableObject  {
     @Published var isPlaying = false
     var lesson: Lesson? 
 
@@ -23,10 +23,17 @@ class AudioPlayer: ObservableObject {
         let url = URL(fileURLWithPath: path)
         
         player = try! AVAudioPlayer(contentsOf: url)
+        player?.delegate = self
         player?.play()
 
         isPlaying = true
         
         
+    }
+}
+
+extension AudioPlayer: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        isPlaying = false
     }
 }
