@@ -2,7 +2,6 @@ import SwiftUI
 
 struct LessonView: View {
     var lesson: Lesson
-    let audioplayer = AudioPlayer()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -14,16 +13,8 @@ struct LessonView: View {
 
             TranslationSetView(translationSet: lesson.sentence)
 
-            Button(action: playAudio) {
-                Text("Play audio")
-            }
-
             Spacer()
         }
-    }
-
-    private func playAudio() {
-        //self.audioplayer.play(audioResource: self.lesson.audioResource)
     }
 }
 

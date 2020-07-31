@@ -10,7 +10,12 @@ import AVFoundation
 
 class AudioPlayer: NSObject, ObservableObject  {
     @Published var isPlaying = false
-    var lesson: Lesson? 
+    var lesson: Lesson? {
+        didSet {
+            stop()
+        }
+    }
+
 
     private var player: AVAudioPlayer?
     
@@ -30,6 +35,15 @@ class AudioPlayer: NSObject, ObservableObject  {
         
         
     }
+
+    func stop() {
+        player?.stop()
+        isPlaying = false
+    }
+
+
+
+
 }
 
 extension AudioPlayer: AVAudioPlayerDelegate {
