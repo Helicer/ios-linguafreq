@@ -19,20 +19,14 @@ struct AudioToolbarView: View {
                 }
             } else {
                 Button(action: {
-                       self.audioplayer.play()
-                   }) {
-                       Image(systemName: "pause.fill")
-                           .resizable()
-                           .scaledToFit()
-                           .frame(width: 30)
-                   }
-
+                    self.audioplayer.pause()
+                }) {
+                    Image(systemName: "pause.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
+                }
             }
-
-
-
-
-
             Spacer()
         }
         .padding()

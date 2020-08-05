@@ -12,7 +12,8 @@ class AudioPlayer: NSObject, ObservableObject  {
     @Published var isPlaying = false
     var lesson: Lesson? {
         didSet {
-            stop()
+            stop() // Stop whatever was playing when new lesson is selected
+            loadAudioResource()
         }
     }
 
@@ -20,20 +21,13 @@ class AudioPlayer: NSObject, ObservableObject  {
     private var player: AVAudioPlayer?
     
     func play() {
-        guard let audioResource = lesson?.audioResource
-            else { return }
-        
-        let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
-        let path = optionalPath!
-        let url = URL(fileURLWithPath: path)
-        
-        player = try! AVAudioPlayer(contentsOf: url)
-        player?.delegate = self
         player?.play()
-
         isPlaying = true
-        
-        
+    }
+
+    func pause() {
+        player?.pause()
+        isPlaying = false
     }
 
     func stop() {
@@ -42,6 +36,18 @@ class AudioPlayer: NSObject, ObservableObject  {
     }
 
 
+    func loadAudioResource() {
+        guard let audioResource = lesson?.audioResource
+            else { return }
+
+        let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
+        let path = optionalPath!
+        let url = URL(fileURLWithPath: path)
+
+        player = try! AVAudioPlayer(contentsOf: url)
+        player?.delegate = self
+
+    }
 
 
 }
