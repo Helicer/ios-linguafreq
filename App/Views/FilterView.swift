@@ -2,11 +2,27 @@ import SwiftUI
 
 struct FilterView: View {
     @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
+    @State private var startRange = 0
+    @State private var endRange = 0
 
     var body: some View {
-        Button("Show me 3") {
-            self.lessonRepository.show3()
+        VStack {
+            Text("Select vocabulary frequency range:")
+
+        HStack {
+            Picker(selection: $startRange, label: Text("Start range")) {
+                ForEach(0 ..< 500) {
+                    Text("\($0)")
+                }
+            }.frame(maxWidth: 150)
+            Text("to")
+            Picker(selection: $endRange, label: Text("End range")) {
+                ForEach(0 ..< 500) {
+                    Text("00\($0)")
+                }
+            }.frame(maxWidth: 150)
         }
+    }
     }
 }
 
