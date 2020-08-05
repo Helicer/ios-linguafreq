@@ -47,7 +47,7 @@ private struct TranslationSetView: View {
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
+        LessonView(lesson: HardcodedJSONLessonRepository().lessons[0])
             .padding()
 // Show preview of View in fixed frame
 //        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])

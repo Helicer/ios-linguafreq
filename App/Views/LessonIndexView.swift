@@ -3,13 +3,14 @@ import SwiftUI
 struct LessonIndexView: View {
     @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
     @State var selectedLessonFrequencyRank = -1
+    @State var isFilterSheetPresented = false
     @ObservedObject var audioplayer = AudioPlayer()
 
     var body: some View {
         NavigationView {
             VStack {
                 LessonList(
-                    lessons: lessonRepository.allLessons,
+                    lessons: lessonRepository.lessons,
                     selectedLessonFrequencyRank: self.$selectedLessonFrequencyRank,
                     audioplayer: audioplayer
                 )
@@ -21,6 +22,16 @@ struct LessonIndexView: View {
                 }
 
             }.navigationBarTitle(Text("Lessons"))
+            .navigationBarItems(trailing: filterButton)
+        }.sheet(isPresented: $isFilterSheetPresented) {
+            FilterView().environmentObject(self.lessonRepository)
+        }
+    }
+
+
+    private var filterButton: some View {
+        Button("Filter") {
+            self.isFilterSheetPresented.toggle()
         }
     }
 
@@ -47,6 +58,7 @@ struct LessonIndexView: View {
             List {
                 ForEach(lessons, id: \.id) { lesson in
                     Button(action: {
+
                         self.selectedLessonFrequencyRank = lesson.frequencyRank
                         self.audioplayer.lesson = lesson
                     }) {
@@ -57,7 +69,8 @@ struct LessonIndexView: View {
                                 CollapsedLessonView(lesson: lesson)
 
                               }
-                          }
+                        }
+
                       }
                   }
               }

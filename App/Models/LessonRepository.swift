@@ -9,15 +9,15 @@
 import Foundation
 
 protocol LessonRepository: ObservableObject {
-    var allLessons: [Lesson] { get } // Implementation must have a getter to conform to protocol
+    var lessons: [Lesson] { get } // Implementation must have a getter to conform to protocol
     
 }
 
 class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
-    @Published var allLessons = [Lesson]()
+    @Published var lessons = [Lesson]()
     
     init() {
-            self.allLessons = HardcodedJSONLessonRepository.loadData()
+            self.lessons = HardcodedJSONLessonRepository.loadData()
     }
     
     private static func loadData() -> [Lesson] {
@@ -32,7 +32,15 @@ class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
         // Crash if can't decode (e.g. malformed JSON, missing/invalid key, doesn't match struct properly)
         let lessons = try! decoder.decode([Lesson].self, from: data)
         return lessons
-                
+
+    }
+
+    func show3() {
+        var lessons = [Lesson]()
+        lessons.append(self.lessons[0])
+        lessons.append(self.lessons[1])
+        lessons.append(self.lessons[2])
+        self.lessons = lessons
 
         
     }
