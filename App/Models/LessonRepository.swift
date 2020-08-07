@@ -7,7 +7,7 @@ class HardcodedJSONLessonRepository: ObservableObject {
             filter()
         }
     }
-    var endRange = 20 {
+    var endRange = 0 {
         didSet {
             filter()
         }
@@ -17,7 +17,16 @@ class HardcodedJSONLessonRepository: ObservableObject {
     init() {
         self.allLessons = loadData()
         self.lessons = self.allLessons
+
+        self.startRange = lessons.min { lesson1, lesson2 -> Bool in
+            lesson1.frequencyRank < lesson2.frequencyRank
+        }?.frequencyRank ?? 0
+
+        self.endRange = lessons.max { lesson1, lesson2 -> Bool in
+            lesson1.frequencyRank < lesson2.frequencyRank
+        }?.frequencyRank ?? 0
     }
+
 
     func showAll() {
         self.lessons = self.allLessons
