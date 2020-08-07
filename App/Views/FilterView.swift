@@ -8,6 +8,12 @@ struct FilterView: View {
     var body: some View {
         VStack {
             Text("Select vocabulary frequency range:")
+            Button("Test filter") {
+                self.lessonRepository.show3()
+            }
+            Button("Show All") {
+                self.lessonRepository.showAll()
+            }
 
         HStack {
             Picker(selection: $startRange, label: Text("Start range")) {
