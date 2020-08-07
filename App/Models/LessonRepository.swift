@@ -1,19 +1,17 @@
-//
-//  LessonRepository.swift
-//  LinguaFreq
-//
-//  Created by Jonathan Rogivue on 2020-07-22.
-//  Copyright © 2020 JRO. All rights reserved.
-//
-
 import Foundation
 
-protocol LessonRepository: ObservableObject {
-    var lessons: [Lesson] { get } // Implementation must have a getter to conform to protocol
-}
-
-class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
+class HardcodedJSONLessonRepository: ObservableObject {
     @Published var lessons = [Lesson]()
+    var startRange = 0 {
+        didSet {
+            filter()
+        }
+    }
+    var endRange = 20 {
+        didSet {
+            filter()
+        }
+    }
     private var allLessons = [Lesson]()
     
     init() {
@@ -21,15 +19,16 @@ class HardcodedJSONLessonRepository: ObservableObject, LessonRepository {
         self.lessons = self.allLessons
     }
 
-    func show3() {
-        lessons = lessons.filter({ lesson -> Bool in
-            lesson.frequencyRank < 101
-        })
-    }
-
     func showAll() {
         self.lessons = self.allLessons
     }
+
+    private func filter() {
+        lessons = allLessons.filter({ lesson -> Bool in
+            lesson.frequencyRank >= startRange && lesson.frequencyRank <= endRange
+        })
+    }
+
     
     private func loadData() -> [Lesson] {
         // Crashes if file does not exist
