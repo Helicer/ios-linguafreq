@@ -8,7 +8,7 @@ struct Lesson: Decodable {
     }
     
     
-    let id = UUID()
+    //let id = UUID()
     let frequencyRank: Int
     let phrase: TranslationSet
     let sentence: TranslationSet

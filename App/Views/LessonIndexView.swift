@@ -56,7 +56,7 @@ struct LessonIndexView: View {
 
         var body: some View {
             List {
-                ForEach(lessons, id: \.id) { lesson in
+                ForEach(lessons, id: \.frequencyRank) { lesson in
                     Button(action: {
 
                         self.selectedLessonFrequencyRank = lesson.frequencyRank

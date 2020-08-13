@@ -14,7 +14,7 @@
         "audioResource": "lesson-1"
     },
     {
-        "frequencyRank": 114,
+        "frequencyRank": 2,
         "phrase": {
             "foreign": "vida",
             "native": "life"
@@ -26,7 +26,7 @@
         "audioResource": "114 - vida - Life - Lo mejor de la vida es bailar. - The best part of life is dancing."
     },
     {
-        "frequencyRank": 109,
+        "frequencyRank": 3,
         "phrase": {
             "foreign": "siento",
             "native": "feel"
@@ -38,7 +38,7 @@
         "audioResource": "109 - siento - feel - Me siento mucho mejor. - I feel better."
     },
     {
-        "frequencyRank": 143,
+        "frequencyRank": 4,
         "phrase": {
             "foreign": "nosotros",
             "native": "us"
@@ -50,7 +50,7 @@
         "audioResource": "143 - nosotros - us - Nosotros estamos en casa. - We are at home."
     },
     {
-        "frequencyRank": 100,
+        "frequencyRank": 5,
         "phrase": {
             "foreign": "estaba",
             "native": "I was"
