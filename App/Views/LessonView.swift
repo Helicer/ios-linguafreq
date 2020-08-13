@@ -8,7 +8,7 @@ struct LessonView: View {
             HStack(alignment: .top) {
                 TranslationSetView(translationSet: lesson.phrase)
                 Spacer().frame(height: 20)
-                Star()
+
             }
 
             TranslationSetView(translationSet: lesson.sentence)
@@ -18,15 +18,6 @@ struct LessonView: View {
     }
 }
 
-private struct Star: View {
-    var body: some View {
-        Image(systemName: "star.fill")
-            .resizable()
-            .scaledToFit()
-            .foregroundColor(.yellow)
-            .frame(width: 30)
-    }
-}
 
 private struct TranslationSetView: View {
     var translationSet: Lesson.TranslationSet
