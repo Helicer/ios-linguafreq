@@ -30,7 +30,7 @@ struct AudioToolbarView: View {
             Spacer()
         }
         .padding()
-        .background(Color.gray)
+        .background(Color.lightBackground)
 
     }
 }

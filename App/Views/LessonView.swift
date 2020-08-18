@@ -4,19 +4,21 @@ struct LessonView: View {
     var lesson: Lesson
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                TranslationSetView(translationSet: lesson.phrase)
-                Spacer().frame(height: 20)
-
-            }
-
+        HStack {
+            VStack(alignment: .leading) {
+            TranslationSetView(translationSet: lesson.phrase)
+                .padding(.bottom)
             TranslationSetView(translationSet: lesson.sentence)
-
-            Spacer()
         }
+
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(Color.lightBackground)
+
     }
 }
+
 
 
 private struct TranslationSetView: View {
@@ -26,24 +28,27 @@ private struct TranslationSetView: View {
         VStack(alignment: .leading) {
             Text(translationSet.foreign)
                 .font(.title)
+                .foregroundColor(Color.foreignAccent)
 
             if translationSet.pronunciation != nil {
-                Text(translationSet.pronunciation!).font(.title)
+                Text(translationSet.pronunciation!)
+                    .font(.title)
+                    .foregroundColor(Color.textPrimary)
             }
-            Text(translationSet.native).font(.title)
+            Text(translationSet.native)
+                .foregroundColor(Color.nativeAccent)
+
+
         }
     }
 }
 
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
         LessonView(lesson: HardcodedJSONLessonRepository().lessons[0])
-            .padding()
 // Show preview of View in fixed frame
 //        LessonView(lesson: HardcodedJSONLessonRepository().allLessons[0])
 //            .padding()
 //            .previewLayout(.fixed(width: 500, height: 300))
         }
-    }
 }
