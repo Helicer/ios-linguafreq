@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LessonView: View {
     var lesson: Lesson
-    
+
     var body: some View {
         VStack {
             TranslationSetView(translationSet: lesson.phrase)
@@ -12,16 +12,14 @@ struct LessonView: View {
         .frame(maxWidth: .infinity)
         .padding()
         .background(Color.lightBackground)
-
     }
 }
-
 
 private struct TranslationSetView: View {
     var translationSet: Lesson.TranslationSet
 
     var body: some View {
-        HStack{
+        HStack {
             VStack(alignment: .leading) {
                 Text(translationSet.foreign)
                     .font(.title)
@@ -37,7 +35,6 @@ private struct TranslationSetView: View {
             .fixedSize(horizontal: false, vertical: true)
             Spacer()
         }
-
     }
 }
 
