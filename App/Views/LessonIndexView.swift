@@ -17,12 +17,12 @@ struct LessonIndexView: View {
 
                 if self.selectedLessonFrequencyRank != -1 {
                     AudioToolbarView(
-                    audioplayer: audioplayer
+                        audioplayer: audioplayer
                     )
                 }
 
             }.navigationBarTitle(Text("Lessons"))
-            .navigationBarItems(trailing: filterButton)
+                .navigationBarItems(trailing: filterButton)
         }.sheet(isPresented: $isFilterSheetPresented) {
             FilterView().environmentObject(self.lessonRepository)
         }
@@ -44,6 +44,7 @@ struct LessonIndexView: View {
                 Spacer()
                 Text(lesson.phrase.native).foregroundColor(.gray)
             }
+        .padding()
         }
     }
 
@@ -55,30 +56,37 @@ struct LessonIndexView: View {
         @ObservedObject var audioplayer: AudioPlayer
 
         var body: some View {
-            List {
-                ForEach(lessons, id: \.frequencyRank) { lesson in
-                    Button(action: {
+            ScrollView {
+                VStack(spacing: 0) {
+                    ForEach(lessons, id: \.frequencyRank) { lesson in
 
-                        self.selectedLessonFrequencyRank = lesson.frequencyRank
-                        self.audioplayer.lesson = lesson
-                    }) {
-                        Group {
-                            if lesson.frequencyRank == self.selectedLessonFrequencyRank {
-                                LessonView(lesson: lesson)
-                            } else {
-                                CollapsedLessonView(lesson: lesson)
+                        VStack(spacing: 0) {
+                            Button(action: {
+                                self.selectedLessonFrequencyRank = lesson.frequencyRank
+                                self.audioplayer.lesson = lesson
+                            }) {
+                                Group {
+                                    if lesson.frequencyRank == self.selectedLessonFrequencyRank {
+                                        LessonView(lesson: lesson)
+                                    } else {
+                                        CollapsedLessonView(lesson: lesson)
 
-                              }
+                                    }
+                                }
+
+                            }
+                            Rectangle()
+                                .foregroundColor(Color.gray)
+                                .frame(height: 0.5)
                         }
-
-                      }
-                  }
-              }
+                    }
+                }
+            }
         }
     }
 
     private func playAudio(forLesson lesson: Lesson) {
-    //    self.audioplayer.play(audioResource: lesson.audioResource)
+        //    self.audioplayer.play(audioResource: lesson.audioResource)
     }
 
 
@@ -87,7 +95,7 @@ struct LessonIndexView: View {
 
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonIndexView(selectedLessonFrequencyRank: 2)
+        LessonIndexView(selectedLessonFrequencyRank: 1)
             .environmentObject(HardcodedJSONLessonRepository())
     }
 }
