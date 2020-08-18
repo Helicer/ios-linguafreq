@@ -15,7 +15,7 @@ struct AudioToolbarView: View {
                     Image(systemName: "play.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 30)
+                        .frame(height: 30)
                 }
             } else {
                 Button(action: {
@@ -24,7 +24,7 @@ struct AudioToolbarView: View {
                     Image(systemName: "pause.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 30)
+                        .frame(height: 30)
                 }
             }
             Spacer()
