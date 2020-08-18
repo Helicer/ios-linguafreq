@@ -39,9 +39,9 @@ struct LessonIndexView: View {
 
         var body: some View {
             HStack {
-                Text(lesson.phrase.foreign).foregroundColor(Color.foreignAccent)
+                Text(lesson.phrase.foreign.text).foregroundColor(Color.foreignAccent)
                 Spacer()
-                Text(lesson.phrase.native).foregroundColor(Color.nativeAccent)
+                Text(lesson.phrase.native.text).foregroundColor(Color.nativeAccent)
             }
             .padding()
         }

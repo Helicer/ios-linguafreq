@@ -21,15 +21,15 @@ private struct TranslationSetView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(translationSet.foreign)
+                Text(translationSet.foreign.text)
                     .font(.title)
                     .foregroundColor(Color.foreignAccent)
                 if translationSet.pronunciation != nil {
-                    Text(translationSet.pronunciation!)
+                    Text(translationSet.pronunciation!.text)
                         .font(.title)
                         .foregroundColor(Color.textPrimary)
                 }
-                Text(translationSet.native)
+                Text(translationSet.native.text)
                     .foregroundColor(Color.nativeAccent)
             }
             .fixedSize(horizontal: false, vertical: true)

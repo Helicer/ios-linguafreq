@@ -1,23 +1,15 @@
-//
-//  AudioPlayer.swift
-//  LinguaFreq
-//
-//  Created by Jonathan Rogivue on 2020-07-07.
-//  Copyright © 2020 JRO. All rights reserved.
-//
-
 import AVFoundation
 
 class AudioPlayer: NSObject, ObservableObject {
     @Published var isPlaying = false
     var lesson: Lesson? {
         didSet {
-            stop() // Stop whatever was playing when new lesson is selected
+            //stop() // Stop whatever was playing when new lesson is selected
             loadAudioResource()
         }
     }
 
-    private var player: AVAudioPlayer?
+    private var player: AVQueuePlayer?
 
     func play() {
         player?.play()
@@ -29,23 +21,31 @@ class AudioPlayer: NSObject, ObservableObject {
         isPlaying = false
     }
 
-    func stop() {
-        player?.stop()
-        isPlaying = false
-    }
 
     func loadAudioResource() {
-        guard let audioResource = lesson?.audioResource
-        else { return }
+        guard let lesson = self.lesson else { return }
+
+        let playeritem1 = playerItem(audioResource: lesson.phrase.foreign.audioResource)
+        let playeritem2 = playerItem(audioResource: lesson.phrase.native.audioResource)
+
+
+        player = AVQueuePlayer(items: [playeritem1, playeritem2])
+
+    }
+
+    func playerItem(audioResource: String) -> AVPlayerItem {
 
         let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
         let path = optionalPath!
         let url = URL(fileURLWithPath: path)
 
-        player = try! AVAudioPlayer(contentsOf: url)
-        player?.delegate = self
+        return AVPlayerItem(url: url)
     }
 }
+
+// BUG: Play/pause button does not go back to play when audio finishes
+// TODO: Check into using NSNotificationCenter to detect when audio finishes and change button
+
 
 extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
