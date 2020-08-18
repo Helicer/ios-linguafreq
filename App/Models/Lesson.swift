@@ -7,14 +7,10 @@ struct Lesson: Decodable {
         let native: String
     }
     
-    
-    //let id = UUID()
+    // let id = UUID()
     let frequencyRank: Int
     let phrase: TranslationSet
     let sentence: TranslationSet
     
     let audioResource: String
-    
-    
 }
-

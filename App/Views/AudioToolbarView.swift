@@ -3,7 +3,6 @@ import SwiftUI
 struct AudioToolbarView: View {
     @ObservedObject var audioplayer: AudioPlayer
 
-
     var body: some View {
         HStack {
             Spacer()
@@ -31,7 +30,6 @@ struct AudioToolbarView: View {
         }
         .padding()
         .background(Color.lightBackground)
-
     }
 }
 
@@ -40,4 +38,3 @@ struct AudioToolbarView_Previews: PreviewProvider {
         AudioToolbarView(audioplayer: AudioPlayer())
     }
 }
-

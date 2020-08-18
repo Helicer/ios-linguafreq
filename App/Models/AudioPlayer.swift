@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-class AudioPlayer: NSObject, ObservableObject  {
+class AudioPlayer: NSObject, ObservableObject {
     @Published var isPlaying = false
     var lesson: Lesson? {
         didSet {
@@ -17,9 +17,8 @@ class AudioPlayer: NSObject, ObservableObject  {
         }
     }
 
-
     private var player: AVAudioPlayer?
-    
+
     func play() {
         player?.play()
         isPlaying = true
@@ -35,10 +34,9 @@ class AudioPlayer: NSObject, ObservableObject  {
         isPlaying = false
     }
 
-
     func loadAudioResource() {
         guard let audioResource = lesson?.audioResource
-            else { return }
+        else { return }
 
         let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
         let path = optionalPath!
@@ -46,10 +44,7 @@ class AudioPlayer: NSObject, ObservableObject  {
 
         player = try! AVAudioPlayer(contentsOf: url)
         player?.delegate = self
-
     }
-
-
 }
 
 extension AudioPlayer: AVAudioPlayerDelegate {

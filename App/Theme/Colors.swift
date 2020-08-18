@@ -8,11 +8,10 @@ extension Color {
     static let nativeAccent = teal700
 
     // Colors
-    static let gray200 =  rgb(237, 242, 247)
-    static let gray900 =  rgb(26, 32, 44)
-    static let blue700 =  rgb(43, 108, 176)
+    static let gray200 = rgb(237, 242, 247)
+    static let gray900 = rgb(26, 32, 44)
+    static let blue700 = rgb(43, 108, 176)
     static let teal700 = rgb(44, 122, 123)
-
 
     private static func rgb(_ red: Int, _ green: Int, _ blue: Int) -> Self {
         Self(

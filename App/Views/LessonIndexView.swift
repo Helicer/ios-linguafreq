@@ -28,7 +28,6 @@ struct LessonIndexView: View {
         }
     }
 
-
     private var filterButton: some View {
         Button("Filter") {
             self.isFilterSheetPresented.toggle()
@@ -44,11 +43,9 @@ struct LessonIndexView: View {
                 Spacer()
                 Text(lesson.phrase.native).foregroundColor(.gray)
             }
-        .padding()
+            .padding()
         }
     }
-
-
 
     private struct LessonList: View {
         var lessons: [Lesson]
@@ -70,10 +67,8 @@ struct LessonIndexView: View {
                                         LessonView(lesson: lesson)
                                     } else {
                                         CollapsedLessonView(lesson: lesson)
-
                                     }
                                 }
-
                             }
                             Rectangle()
                                 .foregroundColor(Color.gray)
@@ -88,10 +83,7 @@ struct LessonIndexView: View {
     private func playAudio(forLesson lesson: Lesson) {
         //    self.audioplayer.play(audioResource: lesson.audioResource)
     }
-
-
 }
-
 
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
@@ -99,11 +91,6 @@ struct LessonIndexView_Previews: PreviewProvider {
             .environmentObject(HardcodedJSONLessonRepository())
     }
 }
-
-
-
-
-
 
 // TODO:
 // State variable - which lesson is currently selected
