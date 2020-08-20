@@ -4,8 +4,8 @@ class AudioPlayer: NSObject, ObservableObject {
     @Published var isPlaying = false
     var lesson: Lesson? {
         didSet {
-            //stop() // Stop whatever was playing when new lesson is selected
-            loadAudioResource()
+            // stop() // Stop whatever was playing when new lesson is selected
+            buildAudioQueue()
         }
     }
 
@@ -21,31 +21,20 @@ class AudioPlayer: NSObject, ObservableObject {
         isPlaying = false
     }
 
-
-    func loadAudioResource() {
+    private func buildAudioQueue() {
         guard let lesson = self.lesson else { return }
 
-        let playeritem1 = playerItem(audioResource: lesson.phrase.foreign.audioResource)
-        let playeritem2 = playerItem(audioResource: lesson.phrase.native.audioResource)
+        let nativePhrase = PlayerItem(translationSet: lesson.phrase).native
+        let nativeSentence = PlayerItem(translationSet: lesson.sentence).native
+        let foreignPhrase = PlayerItem(translationSet: lesson.phrase).foreign
+        let foreignSentence = PlayerItem(translationSet: lesson.sentence).foreign
 
-
-        player = AVQueuePlayer(items: [playeritem1, playeritem2])
-
-    }
-
-    func playerItem(audioResource: String) -> AVPlayerItem {
-
-        let optionalPath = Bundle.main.path(forResource: audioResource, ofType: "mp3", inDirectory: "Audio")
-        let path = optionalPath!
-        let url = URL(fileURLWithPath: path)
-
-        return AVPlayerItem(url: url)
+        player = AVQueuePlayer(items: [nativePhrase, foreignPhrase, nativeSentence, foreignSentence])
     }
 }
 
 // BUG: Play/pause button does not go back to play when audio finishes
-// TODO: Check into using NSNotificationCenter to detect when audio finishes and change button
-
+// TODO: Check into using NSNotificationCenter to detect when audio finishes and change buttont
 
 extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
