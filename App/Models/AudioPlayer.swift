@@ -4,12 +4,16 @@ class AudioPlayer: NSObject, ObservableObject {
     @Published var isPlaying = false
     var lesson: Lesson? {
         didSet {
-            // stop() // Stop whatever was playing when new lesson is selected
+            pause()
             buildAudioQueue()
         }
     }
 
     private var player: AVQueuePlayer?
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     func play() {
         player?.play()
@@ -30,14 +34,17 @@ class AudioPlayer: NSObject, ObservableObject {
         let foreignSentence = PlayerItem(translationSet: lesson.sentence).foreign
 
         player = AVQueuePlayer(items: [nativePhrase, foreignPhrase, nativeSentence, foreignSentence])
+
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(audioPlayerDidFinishPlaying),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: player?.items().last
+        )
     }
-}
 
-// BUG: Play/pause button does not go back to play when audio finishes
-// TODO: Check into using NSNotificationCenter to detect when audio finishes and change buttont
-
-extension AudioPlayer: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    @objc private func audioPlayerDidFinishPlaying(notification: NSNotification) {
         isPlaying = false
     }
 }
