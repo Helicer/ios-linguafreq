@@ -33,7 +33,15 @@ class AudioPlayer: NSObject, ObservableObject {
         let foreignPhrase = PlayerItem(translationSet: lesson.phrase).foreign
         let foreignSentence = PlayerItem(translationSet: lesson.sentence).foreign
 
-        player = AVQueuePlayer(items: [nativePhrase, foreignPhrase, nativeSentence, foreignSentence])
+        player = AVQueuePlayer(items: [
+            nativePhrase,
+            PlayerItem.silence, PlayerItem.silence,
+            foreignPhrase,
+            PlayerItem.silence,
+            nativeSentence,
+            PlayerItem.silence, PlayerItem.silence,
+            foreignSentence,
+        ])
 
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
