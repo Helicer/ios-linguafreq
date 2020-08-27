@@ -47,7 +47,7 @@ class HardcodedJSONLessonRepository: ObservableObject {
 
     private func loadData() -> [Lesson] {
         // Crashes if file does not exist
-        let file = Bundle.main.url(forResource: "mandarin-lessons", withExtension: "json")!
+        let file = Bundle.main.url(forResource: "es-lessons", withExtension: "json")!
 
         // Reading data from file, forcing it to be Data (if doesn't exist, will cause a hard error)
         let data = try! Data(contentsOf: file)

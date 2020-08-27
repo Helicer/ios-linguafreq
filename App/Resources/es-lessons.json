@@ -1,0 +1,462 @@
+[
+  {
+    "phrase": {
+      "foreign": {
+        "text": "que",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "than",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Tengo que ir al colegio.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I have to go to school.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 1
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "de",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "of",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "El gato de Isabel.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Isabel's cat.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 2
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "no",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "no, not",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "No puedo salir.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I can't go out.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 3
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "a",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "to",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Ve a la tienda.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Go to the shop.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 4
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "la",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "the",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "La camisa de Andr\u00e9s.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Andr\u00e9s' shirt.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 5
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "el",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "the",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "El gato es negro.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "The cat is black.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 6
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "es",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "is",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "El hombre es alto.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "The man is tall.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 7
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "y",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "and",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Me gusta caminar y comer. ",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I like walking and eating.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 8
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "en",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "in",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "El viaje es en el carro.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "The trip is by car.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 9
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "lo",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "the",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Lo que quiero es caminar.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "What I want is to walk.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 10
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "un",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "a",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Tengo un gato.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I have a cat.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 11
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "por",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "by, for",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Vamos por el gato de Isabel.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Let's go get Isabel's cat.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 12
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "qu\u00e9",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "what",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "\u00bfQu\u00e9 vamos a hacer?",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "What are we going to do?",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 13
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "me",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Me llamo Andr\u00e9s.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "My name is Andr\u00e9s.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 14
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "una",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "a",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Dame una manzana.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Give me an apple.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 15
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "te",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "you",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Te llamo a la casa.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I'll call you at home.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 16
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "los",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "the",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Los zapatos son azules.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "The shoes are blue.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 17
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "se",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I know",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Yo se hablar ingl\u00e9s.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "I know how to speak English.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 18
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "con",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "with",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Isabel va con Andr\u00e9s a la casa.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Isabel goes home with Andr\u00e9s.\n",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 19
+  },
+  {
+    "phrase": {
+      "foreign": {
+        "text": "para",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "for",
+        "audioResource": ""
+      }
+    },
+    "sentence": {
+      "foreign": {
+        "text": "Andr\u00e9s va para una fiesta.",
+        "audioResource": ""
+      },
+      "native": {
+        "text": "Andr\u00e9s is going to a party.",
+        "audioResource": ""
+      }
+    },
+    "frequencyRank": 20
+  }
+]
