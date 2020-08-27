@@ -23,6 +23,11 @@ platform :ios do
     match type: "appstore"
     sigh
     gym 
-    pilot
+    pilot skip_waiting_for_build_processing: true
+
+    add_git_tag tag: "#{get_version_number}/#{build_number}"
+    push_to_git_remote
+
+    reset_git_repo skip_clean: true
   end
 end
