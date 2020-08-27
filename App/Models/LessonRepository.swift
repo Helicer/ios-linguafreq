@@ -25,12 +25,10 @@ class HardcodedJSONLessonRepository: ObservableObject {
         self.startRange = lessons.min { lesson1, lesson2 -> Bool in
             lesson1.frequencyRank < lesson2.frequencyRank
         }?.frequencyRank ?? 0
-        print("startRange", startRange)
 
         self.endRange = lessons.max { lesson1, lesson2 -> Bool in
             lesson1.frequencyRank < lesson2.frequencyRank
         }?.frequencyRank ?? 0
-        print("endRange", endRange)
 
         self.maxFrequencyRank = endRange
     }
