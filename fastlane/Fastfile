@@ -17,7 +17,8 @@ platform :ios do
   lane :beta do
     ensure_git_status_clean
     
-    increment_build_number
+    build_number = latest_testflight_build_number(initial_build_number: 0) + 1
+    increment_build_number build_number: build_number
     
     match type: "appstore"
     sigh
