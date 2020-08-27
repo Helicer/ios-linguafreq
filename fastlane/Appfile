@@ -1,0 +1,4 @@
+app_identifier("com.jro.LinguaFreq") # The bundle identifier of your app
+apple_id("j@ro.vu") # Your Apple email address
+
+
