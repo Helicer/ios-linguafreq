@@ -24,7 +24,7 @@
 		13D3A32C24AB719F00539895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D3A32B24AB719F00539895 /* Assets.xcassets */; };
 		13D3A32F24AB719F00539895 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D3A32E24AB719F00539895 /* Preview Assets.xcassets */; };
 		13D3A33224AB719F00539895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D3A33024AB719F00539895 /* LaunchScreen.storyboard */; };
-		13FD6B7B24F8923600852C29 /* es-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 13FD6B7A24F8923600852C29 /* es-lessons.json */; };
+		13FD6B7D24F89E9200852C29 /* es-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 13FD6B7C24F89E9200852C29 /* es-lessons.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 		13D3A32E24AB719F00539895 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		13D3A33124AB719F00539895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D3A33324AB719F00539895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13FD6B7A24F8923600852C29 /* es-lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "es-lessons.json"; sourceTree = "<group>"; };
+		13FD6B7C24F89E9200852C29 /* es-lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "es-lessons.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				13D3A32B24AB719F00539895 /* Assets.xcassets */,
-				13FD6B7A24F8923600852C29 /* es-lessons.json */,
+				13FD6B7C24F89E9200852C29 /* es-lessons.json */,
 				1397ACE124B7641600139C2A /* Audio */,
 				134FDAAB24AE3FDA000D0F4B /* Default-568h@2x.png */,
 				13D3A33024AB719F00539895 /* LaunchScreen.storyboard */,
@@ -218,7 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D3A33224AB719F00539895 /* LaunchScreen.storyboard in Resources */,
-				13FD6B7B24F8923600852C29 /* es-lessons.json in Resources */,
+				13FD6B7D24F89E9200852C29 /* es-lessons.json in Resources */,
 				1397ACE224B7641600139C2A /* Audio in Resources */,
 				134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */,
 				13D3A32F24AB719F00539895 /* Preview Assets.xcassets in Resources */,
