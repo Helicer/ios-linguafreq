@@ -21,7 +21,7 @@ struct LessonIndexView: View {
                     )
                 }
 
-            }.navigationBarTitle(Text("Playlist"))
+            }.navigationBarTitle(Text("Lesson Playlist"))
                 .navigationBarItems(trailing: filterButton)
         }.sheet(isPresented: $isFilterSheetPresented) {
             FilterView().environmentObject(self.lessonRepository)
