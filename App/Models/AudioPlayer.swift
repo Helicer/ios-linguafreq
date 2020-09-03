@@ -6,6 +6,7 @@ class AudioPlayer: NSObject, ObservableObject {
         didSet {
             pause()
             buildAudioQueue()
+            play()
         }
     }
 
