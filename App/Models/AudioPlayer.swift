@@ -12,6 +12,7 @@ class AudioPlayer: NSObject, ObservableObject {
 
     private var player: AVQueuePlayer?
 
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -43,6 +44,17 @@ class AudioPlayer: NSObject, ObservableObject {
             PlayerItem.silence, PlayerItem.silence,
             nativeSentence,
         ])
+
+
+        // Play while muted
+        // https://stackoverflow.com/questions/51010390/avaudiosession-setcategory-swift-4-2-ios-12-play-sound-on-silent
+        // TODO: Put this somewhere else
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
 
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
