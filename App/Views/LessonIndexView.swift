@@ -21,7 +21,7 @@ struct LessonIndexView: View {
                     )
                 }
 
-            }.navigationBarTitle(Text("Lessons"))
+            }.navigationBarTitle(Text("Playlist"))
                 .navigationBarItems(trailing: filterButton)
         }.sheet(isPresented: $isFilterSheetPresented) {
             FilterView().environmentObject(self.lessonRepository)
@@ -39,6 +39,8 @@ struct LessonIndexView: View {
 
         var body: some View {
             HStack {
+                Text("#" + String(lesson.frequencyRank))
+                    .foregroundColor(Color.textSecondary)
                 Text(lesson.phrase.foreign.text).foregroundColor(Color.foreignAccent)
                 Spacer()
                 Text(lesson.phrase.native.text).foregroundColor(Color.nativeAccent)
