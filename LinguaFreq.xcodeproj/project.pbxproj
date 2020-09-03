@@ -15,6 +15,7 @@
 		1365BBE224EEB6A40019B895 /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1365BBE124EEB6A40019B895 /* PlayerItem.swift */; };
 		136BEAF924D4524900107A05 /* AudioToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136BEAF824D4524900107A05 /* AudioToolbarView.swift */; };
 		137E0D5F2501430F0027EB67 /* es-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 137E0D5E2501430F0027EB67 /* es-lessons.json */; };
+		137E0D612501482A0027EB67 /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = 137E0D602501482A0027EB67 /* fastlane */; };
 		137E8B1224EC127600C8A47A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E8B1124EC127600C8A47A /* Colors.swift */; };
 		1397ACE224B7641600139C2A /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 1397ACE124B7641600139C2A /* Audio */; };
 		139C578424CF0B27009E16F6 /* mandarin-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 139C578324CF0B27009E16F6 /* mandarin-lessons.json */; };
@@ -36,6 +37,7 @@
 		1365BBE124EEB6A40019B895 /* PlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
 		136BEAF824D4524900107A05 /* AudioToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioToolbarView.swift; sourceTree = "<group>"; };
 		137E0D5E2501430F0027EB67 /* es-lessons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "es-lessons.json"; sourceTree = "<group>"; };
+		137E0D602501482A0027EB67 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		137E8B1124EC127600C8A47A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1397ACE124B7641600139C2A /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		139C578324CF0B27009E16F6 /* mandarin-lessons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mandarin-lessons.json"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				13D3A32424AB719D00539895 /* App */,
 				13D3A32324AB719D00539895 /* Products */,
+				137E0D602501482A0027EB67 /* fastlane */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +226,7 @@
 				134FDAAC24AE3FDA000D0F4B /* Default-568h@2x.png in Resources */,
 				13D3A32F24AB719F00539895 /* Preview Assets.xcassets in Resources */,
 				13D3A32C24AB719F00539895 /* Assets.xcassets in Resources */,
+				137E0D612501482A0027EB67 /* fastlane in Resources */,
 				139C578424CF0B27009E16F6 /* mandarin-lessons.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
