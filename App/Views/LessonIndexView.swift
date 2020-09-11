@@ -2,27 +2,25 @@ import SwiftUI
 
 struct LessonIndexView: View {
     @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
-    @State var selectedLessonFrequencyRank = -1
     @State var isFilterSheetPresented = false
-    @ObservedObject var audioplayer = AudioPlayer()
+    @ObservedObject var playlist = Playlist()
 
     var body: some View {
         NavigationView {
             VStack {
                 LessonList(
                     lessons: lessonRepository.lessons,
-                    selectedLessonFrequencyRank: self.$selectedLessonFrequencyRank,
-                    audioplayer: audioplayer
+                    playlist: playlist
                 )
 
-                if self.selectedLessonFrequencyRank != -1 {
+                if playlist.selectedLessonFrequencyRank != -1 {
                     AudioToolbarView(
-                        audioplayer: audioplayer
+                        audioplayer: playlist.audioplayer
                     )
                 }
 
             }.navigationBarTitle(Text("Lesson Playlist"))
-                .navigationBarItems(trailing: filterButton)
+                .navigationBarItems(leading: playlistButton, trailing: filterButton)
         }.sheet(isPresented: $isFilterSheetPresented) {
             FilterView().environmentObject(self.lessonRepository)
         }
@@ -31,6 +29,12 @@ struct LessonIndexView: View {
     private var filterButton: some View {
         Button("Filter") {
             self.isFilterSheetPresented.toggle()
+        }
+    }
+
+    private var playlistButton: some View {
+        Button("Play all") {
+            self.playlist.play(lessons: self.lessonRepository.lessons)
         }
     }
 
@@ -51,8 +55,8 @@ struct LessonIndexView: View {
 
     private struct LessonList: View {
         var lessons: [Lesson]
-        @Binding var selectedLessonFrequencyRank: Int
-        @ObservedObject var audioplayer: AudioPlayer
+        @ObservedObject var playlist: Playlist
+
 
         var body: some View {
             ScrollView {
@@ -61,11 +65,11 @@ struct LessonIndexView: View {
 
                         VStack(spacing: 0) {
                             Button(action: {
-                                self.selectedLessonFrequencyRank = lesson.frequencyRank
-                                self.audioplayer.lesson = lesson
+                                self.playlist.selectedLessonFrequencyRank = lesson.frequencyRank
+                                self.playlist.play(lessons: [lesson])
                             }) {
                                 Group {
-                                    if lesson.frequencyRank == self.selectedLessonFrequencyRank {
+                                    if lesson.frequencyRank == self.playlist.selectedLessonFrequencyRank {
                                         LessonView(lesson: lesson)
                                     } else {
                                         CollapsedLessonView(lesson: lesson)
@@ -89,7 +93,7 @@ struct LessonIndexView: View {
 
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonIndexView(selectedLessonFrequencyRank: 1)
+        LessonIndexView()
             .environmentObject(HardcodedJSONLessonRepository())
     }
 }

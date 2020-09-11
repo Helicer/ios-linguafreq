@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13092F29250A6E94004F937F /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13092F28250A6E94004F937F /* Playlist.swift */; };
 		134FDAA424AE14BA000D0F4B /* LessonIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */; };
 		134FDAA624AE21E1000D0F4B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA524AE21E1000D0F4B /* Lesson.swift */; };
 		134FDAA824AE354A000D0F4B /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FDAA724AE354A000D0F4B /* LessonView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13092F28250A6E94004F937F /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		134FDAA324AE14BA000D0F4B /* LessonIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonIndexView.swift; sourceTree = "<group>"; };
 		134FDAA524AE21E1000D0F4B /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		134FDAA724AE354A000D0F4B /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				1365BBE124EEB6A40019B895 /* PlayerItem.swift */,
 				134FDAA524AE21E1000D0F4B /* Lesson.swift */,
 				135AAA4924C8742400884260 /* LessonRepository.swift */,
+				13092F28250A6E94004F937F /* Playlist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				13D3A32824AB719D00539895 /* SceneDelegate.swift in Sources */,
 				135AAA4A24C8742400884260 /* LessonRepository.swift in Sources */,
 				13BA871324B4CA5A0047BBFB /* AudioPlayer.swift in Sources */,
+				13092F29250A6E94004F937F /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

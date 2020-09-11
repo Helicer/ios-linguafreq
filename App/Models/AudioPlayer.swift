@@ -3,6 +3,7 @@ import AVFoundation
 
 class AudioPlayer: NSObject, ObservableObject {
     @Published var isPlaying = false
+    @Published var isDone = false
     var lesson: Lesson? {
         didSet {
             pause()
@@ -29,6 +30,7 @@ class AudioPlayer: NSObject, ObservableObject {
     func play() {
         player?.play()
         isPlaying = true
+        isDone = false
     }
 
     func pause() {
@@ -67,5 +69,6 @@ class AudioPlayer: NSObject, ObservableObject {
 
     @objc private func audioPlayerDidFinishPlaying(notification: NSNotification) {
         isPlaying = false
+        isDone = true
     }
 }
