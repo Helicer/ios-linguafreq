@@ -94,7 +94,7 @@ struct LessonIndexView: View {
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
         LessonIndexView()
-            .environmentObject(HardcodedJSONLessonRepository())
+            .environmentObject(HardcodedJSONLessonRepository(preview: true))
     }
 }
 

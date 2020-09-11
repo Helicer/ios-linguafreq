@@ -18,8 +18,13 @@ class HardcodedJSONLessonRepository: ObservableObject {
 
     private var allLessons = [Lesson]()
 
-    init() {
+    init(preview: Bool = false) {
         self.allLessons = loadData()
+
+        if preview {
+            self.allLessons = Array(allLessons[0...4])
+        }
+
         self.lessons = allLessons
 
         self.startRange = lessons.min { lesson1, lesson2 -> Bool in
