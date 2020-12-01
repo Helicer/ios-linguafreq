@@ -20,9 +20,23 @@ struct LessonIndexView: View {
                 }
 
             }.navigationBarTitle(Text("Lesson Playlist"))
-                .navigationBarItems(leading: playlistButton, trailing: filterButton)
+            .navigationBarItems(leading:
+                                    HStack {
+                                        Text("Play:")
+                                        playlistButton;
+                                        Text("|")
+                                        randomPlaylistButton;
+
+                                    },
+                                trailing:
+                                    HStack {
+                                        filterButton
+                                    }
+
+
+            )
         }.sheet(isPresented: $isFilterSheetPresented) {
-            FilterView().environmentObject(self.lessonRepository)
+            FilterView(isPresented: self.$isFilterSheetPresented).environmentObject(self.lessonRepository)
         }
     }
 
@@ -33,8 +47,14 @@ struct LessonIndexView: View {
     }
 
     private var playlistButton: some View {
-        Button("Play all") {
+        Button("All") {
             self.playlist.play(lessons: self.lessonRepository.lessons)
+        }
+    }
+
+    private var randomPlaylistButton: some View {
+        Button("Random") {
+            self.playlist.playRandom(lessons: self.lessonRepository.lessons)
         }
     }
 
@@ -56,10 +76,13 @@ struct LessonIndexView: View {
     private struct LessonList: View {
         var lessons: [Lesson]
         @ObservedObject var playlist: Playlist
+        @State var scroll_id = 0
 
 
         var body: some View {
-            ScrollView {
+
+                ScrollViewReader { scrollViewProxy in
+                ScrollView {
                 VStack(spacing: 0) {
                     ForEach(lessons, id: \.frequencyRank) { lesson in
 
@@ -82,6 +105,12 @@ struct LessonIndexView: View {
                         }
                     }
                 }
+
+                }.onChange(of: self.playlist.selectedLessonFrequencyRank) { id in
+                    withAnimation{
+                        scrollViewProxy.scrollTo(id, anchor: .bottom)
+                    }
+                }
             }
         }
     }
@@ -89,7 +118,7 @@ struct LessonIndexView: View {
     private func playAudio(forLesson lesson: Lesson) {
         //    self.audioplayer.play(audioResource: lesson.audioResource)
     }
-}
+
 
 struct LessonIndexView_Previews: PreviewProvider {
     static var previews: some View {
@@ -102,3 +131,4 @@ struct LessonIndexView_Previews: PreviewProvider {
 // State variable - which lesson is currently selected
 // In the foreach, if lesson matches what is selected, expand/show details
 // Button to toggle it
+}

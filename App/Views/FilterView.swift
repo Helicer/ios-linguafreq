@@ -3,12 +3,15 @@ import SwiftUI
 struct FilterView: View {
     @EnvironmentObject var lessonRepository: HardcodedJSONLessonRepository
 
+    @Binding var isPresented: Bool
+
     var body: some View {
         VStack {
             Text("Select vocabulary frequency range:")
             Button("Show All") {
                 self.lessonRepository.showAll()
             }
+
 
             // TODO: Start picker at least frequency value
             HStack {
@@ -24,12 +27,17 @@ struct FilterView: View {
                     }
                 }.frame(maxWidth: 150)
             }
+            Button(action: {
+                    self.isPresented = false}) {
+                Text("SET FILTER")
+            }
         }
     }
 }
-
-struct FilterView_Previews: PreviewProvider {
-    static var previews: some View {
-        FilterView()
-    }
-}
+//
+//struct FilterView_Previews: PreviewProvider {
+//    @Binding var isPresented: Bool
+//    static var previews: some View {
+//        FilterView()
+//    }
+//}

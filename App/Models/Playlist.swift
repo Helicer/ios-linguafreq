@@ -25,4 +25,23 @@ class Playlist: ObservableObject {
             }
         }
     }
+
+    func playRandom(lessons: [Lesson]) {
+
+        // Choose a random lesson from lessons
+        guard let firstLesson = lessons.randomElement() else { return }
+        selectedLessonFrequencyRank = firstLesson.frequencyRank
+
+        // Assign & Play random lesson
+        audioplayer.lesson = firstLesson
+
+        cancellable = audioplayer.$isDone.sink { isDone in
+            if isDone {
+                guard let nextLesson = lessons.randomElement() else { return }
+                self.audioplayer.lesson = nextLesson
+                self.selectedLessonFrequencyRank = nextLesson.frequencyRank
+            }
+        }
+
+    }
 }
